@@ -3,22 +3,46 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
+  // 1. render courses in a list
+  // 2. select a course
+  // 3. render selected course
   courses = [
     {
       id: 1,
       title: 'Angular 13 Fundamentals',
       description: 'Learn the fundamentals of Angular 13',
       percentComplete: 26,
-      favorite: true
-    }
-  ];
+      favorite: true,
+    },
+    {
+      id: 2,
+      title: 'JS Hardest parts',
+      description: 'Js is hard',
+      percentComplete: 26,
+      favorite: true,
+    },
+    {
+      id: 3,
+      title: 'Cool Stuff',
+      description: 'Cool things',
+      percentComplete: 26,
+      favorite: true,
+    },
+  ]
+  selectedCourse = null
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  selectCourse(course) {
+    this.selectedCourse = course
   }
 
+  deleteCourse(courseId) {
+    this.courses = this.courses.filter((course) => course.id !== courseId)
+  }
 }
