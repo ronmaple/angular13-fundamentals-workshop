@@ -41,7 +41,7 @@
             <input
               matInput
               placeholder="Title"
-              [(ngModel)]="selectedCourse.title"
+              [(ngModel)]="currentInput.title"
               name="title"
               required
               type="text"
@@ -51,8 +51,26 @@
             <input
               matInput
               placeholder="Description"
-              [(ngModel)]="selectedCourse.description"
+              [(ngModel)]="currentInput.description"
               name="description"
+              type="text"
+            >
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Percent Complete"
+              [(ngModel)]="currentInput.percentComplete"
+              name="percentComplete"
+              type="number"
+            >
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Favorite"
+              [(ngModel)]="currentInput.favorite"
+              name="favorite"
               type="text"
             >
           </mat-form-field>

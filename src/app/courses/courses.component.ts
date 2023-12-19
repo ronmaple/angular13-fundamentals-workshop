@@ -36,10 +36,13 @@ export class CoursesComponent implements OnInit {
     },
   ]
   selectedCourse = emptyCourse
+  currentInput = { ...emptyCourse }
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.currentInput)
+  }
 
   selectCourse(course) {
     this.selectedCourse = course
@@ -50,6 +53,10 @@ export class CoursesComponent implements OnInit {
   }
 
   reset() {
+    console.log('--rset')
+    console.log(emptyCourse)
+    this.currentInput = { ...emptyCourse }
     this.selectCourse({ ...emptyCourse })
+    console.log(this.currentInput)
   }
 }
